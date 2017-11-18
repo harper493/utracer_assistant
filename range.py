@@ -15,11 +15,11 @@ class range(object) :
     If no interval is given, a range object will come up with with
     best choice of interval. By default, it tries to generate 6
     intervals (i.e. 7 values). This can be overridden by calling
-    set_intervals(n). That will choose the best number of
+    set_value_count(n). That will choose the best number of
     intervals (closest to n) that allows the intervals to be
     multiples of 2, 5 or 10.
 
-    set_exact_intervals imposes the number of intervals, regardless
+    set_exact_values imposes the number of intervals, regardless
     of how odd the resulting values may look.
 
     For example:
@@ -33,7 +33,7 @@ class range(object) :
     def __init__(self, value, v2=None, v3=None) :
         self.value = value
         self._start, self._interval, self._end = None, None, None
-        self.interval_count = 6    # default interval count
+        self.value_count = 6    # default interval count
         self.precise_intervals = False
         self.actual_interval = 0
         if isinstance(value, basestring) :
@@ -42,14 +42,17 @@ class range(object) :
             if v3 is None :
                 if v2 is None :
                     self._end = float(value)
+                    self.value = str(value)
                 else :
                     self._start, self._end = float(value), float(v2)
+                    self.value = '%f,%f' % (value, v2)
             else :
                 self._start, self._interval, self._end = \
                     float(value), float(v2), float(v3)
+                self.value = '%f,%f,%f' % (value, v2, v3)
         elif isinstance(value, range) :
-            self.value, self._start, self._interval, self._end, self.interval_count, self.precise_intervals, self.actual_interval = \
-                value.value, value._start, value._interval, value._end, value.interval_count, value.precise_intervals, value.actual_interval
+            self.value, self._start, self._interval, self._end, self.value_count, self.precise_intervals, self.actual_interval = \
+                value.value, value._start, value._interval, value._end, value.value_count, value.precise_intervals, value.actual_interval
         else :
             raise ValueError("'%s' (%s) is not an acceptable type for a range" %
                              (value, type(value)))
@@ -84,7 +87,10 @@ class range(object) :
         return self._start is None
 
     def must_be_unique(self) :
-        if not self.is_unique :
+        """
+        Raise ValueError if value is not a single value
+        """
+        if not self.is_unique() :
             raise ValueError("range '%s' must be just a single number" % (self.value,))
 
     def start(self) :
@@ -93,16 +99,16 @@ class range(object) :
     def span(self) :
         return self._end - self.start()
 
-    def set_exact_intervals(self, n) :
-        self.interval_count, self.precise_intervals = n, True
+    def set_exact_values(self, n) :
+        self.value_count, self.precise_intervals = n, True
 
-    def set_intervals(self, n) :
-        self.interval_count, self.precise_intervals = n, False
+    def set_value_count(self, n) :
+        self.value_count, self.precise_intervals = n, False
 
     def _make_interval(self) :
         if self._interval is None :
             if self.precise_intervals :
-                self.actual_interval = self.span() / self.interval_count
+                self.actual_interval = self.span() / self.value_count
             else :
                 self.actual_interval = \
                     self._round_interval()
@@ -117,8 +123,8 @@ class range(object) :
         gives the closest match to the requested number of intervals.
         """
         def metric(x) :
-            return math.fabs(math.log((self.span() / x) / self.interval_count))
-        int1 = self.span() / self.interval_count
+            return math.fabs(math.log((self.span() / x) / self.value_count))
+        int1 = self.span() / self.value_count
         basis = float(10 ** int(math.log10(self.span())))
         mantissa = self.span() / basis
         best = basis/10.0
