@@ -33,18 +33,26 @@ class range(object) :
     def __init__(self, value, v2=None, v3=None) :
         self.value = value
         self._start, self._interval, self._end = None, None, None
+        self._values = None
         self.value_count = 6    # default interval count
         self.precise_intervals = False
         self.actual_interval = 0
         if isinstance(value, basestring) :
             self._parse()
+        elif isinstance(value, list) or isinstance(value, tuple) :
+            self._values = value
+            self._start, self._end = min(value), max(value)
+            self._interval = None
+            self.value = str(value)
         elif isinstance(value, int) or isinstance(value, float) :
             if v3 is None :
                 if v2 is None :
                     self._end = float(value)
+                    self._start, self._interval = 0, None
                     self.value = str(value)
                 else :
                     self._start, self._end = float(value), float(v2)
+                    self._interval = None
                     self.value = '%f,%f' % (value, v2)
             else :
                 self._start, self._interval, self._end = \
@@ -60,6 +68,7 @@ class range(object) :
     def _parse(self):
         rx = r'^([+-]?\d*\.?\d+)(?:,([+-]?\d*\.?\d+)(?:,([+-]?\d*\d+))?)?$'
         m = re.match(rx, self.value)
+        self._start, self._interval = 0, None
         try :
             if m :
                 if m.group(2) :
@@ -92,12 +101,13 @@ class range(object) :
         """
         if not self.is_unique() :
             raise ValueError("range '%s' must be just a single number" % (self.value,))
+        return self()
 
     def start(self) :
         return 0.0 if self._start is None else self._start
 
     def span(self) :
-        return self._end - self.start()
+        return math.fabs(self._end - self.start())
 
     def set_exact_values(self, n) :
         self.value_count, self.precise_intervals = n, True
@@ -124,9 +134,7 @@ class range(object) :
         """
         def metric(x) :
             return math.fabs(math.log((self.span() / x) / self.value_count))
-        int1 = self.span() / self.value_count
         basis = float(10 ** int(math.log10(self.span())))
-        mantissa = self.span() / basis
         best = basis/10.0
         best_metric = metric(best)
         for x in [basis/5, basis/2, basis, basis*2, basis*5, basis*10] :
@@ -136,12 +144,13 @@ class range(object) :
         return best
 
     def _make_values(self) :
-        self._make_interval()
-        actual_intervals = self.span() / self.actual_interval
-        n = int(actual_intervals)
-        if actual_intervals > n :
-            n += 1
-        self._values = [ self.start() + i * self.actual_interval for i in xrange(n+1)]
+        if self._values is None :
+            self._make_interval()
+            actual_intervals = self.span() / self.actual_interval
+            n = int(actual_intervals)
+            if actual_intervals > n :
+                n += 1
+            self._values = [ self.start() + i * self.actual_interval for i in xrange(n+1)]
 
     def values(self) :
         self._make_values()
@@ -174,9 +183,9 @@ if __name__=="__main__" :
     print
     g = range('10,300')
     print g.values()
-    g.set_intervals(12)
+    g.set_value_count(12)
     print g.values()
-    b.set_exact_intervals(9)
+    b.set_exact_values(9)
     print b.values()
     print b()
 
