@@ -116,7 +116,7 @@ class tube_map:
             Eb = self.va_max() * tube_map.EB_RATIO
         if Eb and Rl==0 :
             min_eb = min(Eb, self.Va_from_Ia(min_vg, Ia) * 1.1)
-            Rl = round((Eb - min_eb) / Ia, 2)
+            Rl = round((Eb - min_eb) / Ia(), 2)
             args.Rl = Rl
         max_ia = Ia() or self(min_eb, -min_vg)
         min_ia = Ia() * min_ia_ratio

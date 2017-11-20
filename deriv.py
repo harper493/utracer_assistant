@@ -51,11 +51,11 @@ def make_range(def_value, value, intervals=6) :
 def do_derivs(tm, args) :
     if args.Eb:
         note = u"Eb = %.0f V Rl=%.1f KΩ" % (args.Eb, args.Rl)
-        args.Eb = args.Eb.must_be_unique()
     elif args.Vg:
-        note = "Vg = %.2f V" % (args.Vg,)
         args.Vg = args.Vg.must_be_unique()
+        note = "Vg = %.2f V" % (args.Vg,)
     else:
+        args.Va = args.Va.must_be_unique()
         note = "Va = %.0f V" % (args.Va,)
     derivs = tm.get_derivatives(Eb=args.Eb, Va=args.Va, Vg=args.Vg, Rl=args.Rl, Ia=args.Ia, args=args)
 
@@ -70,7 +70,7 @@ def do_derivs(tm, args) :
             labels += ["Va", "Vg"]
         ia_range = np.linspace(0, args.Ia(), 20)
         graph = multi_axis_graph(x_values=derivs[0], y_values=derivs[1:len(labels) + 1], labels=labels, x_label="Ia (ma)", title=args.title,
-                                subtitle=u"Gm, Rp and µ")
+                                subtitle=u"Gm, Rp and µ", note=note)
         if args.verbose:
             for d in derivs:
                 print d
@@ -114,7 +114,6 @@ if args.Ia is None :
     args.Ia = range(tm.ia_min(), tm.ia_max())
 
 if args.output or args.draw :
-    args.Va = args.Va.must_be_unique()
     do_derivs(tm, args)
 elif args.plate :
     if args.Vg is None:
