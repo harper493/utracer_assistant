@@ -29,7 +29,7 @@ def get_args() :
     try :
         if args.Rl and not args.Eb :
             raise Exception("Must give a B+ voltage if a load resistance is specified")
-        if not args.grid and not args.plate and sum([ v!=0 for v in [args.Va, args.Eb, args.Vg]]) > 1 :
+        if not args.grid and not args.plate and False :
             raise Exception("Can only specify one of Eb, Va, Vg")
         if args.file is None :
             raise Exception("Must give a data file name")
@@ -57,8 +57,7 @@ def do_derivs(tm, args) :
         args.Vg = args.Vg.must_be_unique()
     else:
         note = "Va = %.0f V" % (args.Va,)
-        args.Va = args.Va.must_be_unique()
-    derivs = tm.get_derivatives(Eb=args.Eb, Va=args.Va, Vg=args.Vg, Rl=args.Rl, max_ia=args.max_i, args=args)
+    derivs = tm.get_derivatives(Eb=args.Eb, Va=args.Va, Vg=args.Vg, Rl=args.Rl, Ia=args.Ia, args=args)
 
     if args.output:
         sys.stdout.write(','.join(['Ia', 'Gm', 'Rp', 'mu', 'Va', 'Vg']) + '\n')
@@ -69,8 +68,8 @@ def do_derivs(tm, args) :
         labels = ["Gm (mA/V)", u"Rp (KΩ)", u"µ"]
         if args.extra:
             labels += ["Va", "Vg"]
-        ia_range = np.linspace(0, args.max_i, 20)
-        graph = multi_axis_graph(x_values=args.Ia, y_values=derivs[1:len(labels) + 1], labels=labels, x_label="Ia (ma)", title=args.title,
+        ia_range = np.linspace(0, args.Ia(), 20)
+        graph = multi_axis_graph(x_values=derivs[0], y_values=derivs[1:len(labels) + 1], labels=labels, x_label="Ia (ma)", title=args.title,
                                 subtitle=u"Gm, Rp and µ")
         if args.verbose:
             for d in derivs:
@@ -80,7 +79,6 @@ def do_derivs(tm, args) :
 def do_plate_curves(tm, args) :
     curves = []
     labels = []
-    print '!!!', args.Va
     for vg in args.Vg :
         curves.append([tm(va, -vg) for va in args.Va])
         labels.append("Vg = %.1f" % (-vg,))
@@ -112,17 +110,22 @@ if args is None :
 utd = utracer_data(args.file)
 tm = tube_map(utd)
 
-if args.Vg is None :
-    args.Vg = tm.vg_values()
-if args.Va is None :
-    args.Va = tm.va_values()
 if args.Ia is None :
     args.Ia = range(tm.ia_min(), tm.ia_max())
 
 if args.output or args.draw :
+    args.Va = args.Va.must_be_unique()
     do_derivs(tm, args)
 elif args.plate :
+    if args.Vg is None:
+        args.Vg = tm.vg_values()
+    if args.Va is None:
+        args.Va = tm.va_values()
     do_plate_curves(tm, args)
 elif args.grid :
+    if args.Vg is None:
+        args.Vg = tm.vg_values()
+    if args.Va is None:
+        args.Va = tm.va_values()
     do_grid_curves(tm, args)
 

@@ -93,7 +93,7 @@ class range(object) :
         Return True iff the range contains only a final value, meaning
         that it can be used as a single value.
         """
-        return self._start is None
+        return self._start==0
 
     def must_be_unique(self) :
         """
