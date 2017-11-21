@@ -11,6 +11,12 @@ class range(object) :
     -- end : start is implicitly 0, the interval is determined as below
     -- start,end : interval determined implicitly
     -- start,interval,end : everything is explicit
+    -- v1,v2,v3,v4,... : explicit list of values
+    -- v1,v2, : if the values end with a comma, it is an explicit list
+    -- v1,v2,v3 : if this looks more like a list than a range (e.g. 10,20,30)
+       it is treated as a list
+    -- v1,+v2,v3 : forces v2 to be treated as an interval even if it doesn't
+       look like one (e.g. 10,+20,30)
 
     If no interval is given, a range object will come up with with
     best choice of interval. By default, it tries to generate 6
@@ -66,20 +72,32 @@ class range(object) :
                              (value, type(value)))
 
     def _parse(self):
-        rx = r'^([+-]?\d*\.?\d+)(?:,([+-]?\d*\.?\d+)(?:,([+-]?\d*\d+))?)?$'
-        m = re.match(rx, self.value)
-        self._start, self._interval = 0, None
         try :
-            if m :
-                if m.group(2) :
-                    if m.group(3) :
-                        self._start, self._interval, self._end = \
-                            float(m.group(1)), float(m.group(2)), float(m.group(3))
-                    else :
-                        self._start, self._end = float(m.group(1)), float(m.group(2))
-                else :
-                    self._end = float(m.group(1))
-        except str :
+            values = self.value.split(',')
+            is_list = False
+            if len(values[-1])==0:      # explicit list
+                is_list = True
+                nvalues = map(float, values[:-1])
+            elif len(values) > 3 :
+                is_list = True
+                nvalues = map(float, values)
+            else :
+                nvalues = map(float, values)
+                is_list = len(values)==3 \
+                          and nvalues[1]>nvalues[0] \
+                          and nvalues[0]+nvalues[1] > nvalues[2]/2 \
+                          and not values[1][0]=='+'
+            if is_list :
+                self._values = nvalues
+                self._start, self._end = min(nvalues), max(nvalues)
+                self._interval = None
+            elif len(nvalues)==1 :
+                self._start, self._interval, self._end, self._values = None, None, nvalues[0], None
+            elif len(nvalues)==2 :
+                self._start, self._interval, self._end, self._values = nvalues[0], None, nvalues[1], None
+            else :
+                self._start, self._interval, self._end, self._values = nvalues[0], nvalues[1], nvalues[2], None
+        except ValueError :
             raise Exception("incorrect range expression '%s'" % (self.value,))
 
     def __call__(self) :
@@ -166,17 +184,19 @@ class range(object) :
 
 # Test code - executed if the file is run stand-alone
 
+def t(v) :
+    print v, range(v).values()
+
 if __name__=="__main__" :
-    a = range('10')
-    print a.values()
-    b = range('0,10')
-    print b.values()
-    c = range('5,10')
-    print c.values()
-    d = range('0,2,10')
-    print d.values()
-    e = range('0,2,11')
-    print e.values()
+    t('10')
+    t('0,10')
+    t('5,10')
+    t('0,2,10')
+    t('0,2,11')
+    t('10,20,30')
+    t('1,2,3,4,5')
+    t('1,2,20,')
+    t('0,+10,21')
     f = range('5,6')
     for x in f:
         print x,
@@ -185,6 +205,7 @@ if __name__=="__main__" :
     print g.values()
     g.set_value_count(12)
     print g.values()
+    b = range('0,10')
     b.set_exact_values(9)
     print b.values()
     print b()
