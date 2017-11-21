@@ -39,8 +39,6 @@ class graph_base(object) :
     def add_legend(self, items=None) :
         if items:
             z = zip(*items)
-            print z[0]
-            print z[1]
             self.legend = self.subplot.legend(handles=z[0], labels=z[1], loc="best")
         else :
             self.legend = self.subplot.legend(loc="best")
