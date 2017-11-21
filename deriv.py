@@ -125,6 +125,6 @@ elif args.grid :
     if args.Vg is None:
         args.Vg = tm.vg_values()
     if args.Va is None:
-        args.Va = tm.va_values()
+        args.Va = range(round(tm.va_values()[-1], 2))
     do_grid_curves(tm, args)
 
