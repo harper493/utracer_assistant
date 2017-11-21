@@ -7,7 +7,7 @@ from tube_map import tube_map
 from utracer_data import utracer_data
 from graphing import single_axis_graph, multi_axis_graph
 from range import range
-
+import os
 
 def get_args() :
     parser = ArgumentParser(usage='[options] data-filename')
@@ -39,7 +39,7 @@ def get_args() :
     if not (args.draw or args.output or args.plate or args.grid) :
         args.draw = True
     if not args.title :
-        args.title = args.file[:args.file.find('.')].upper()
+        args.title = os.path.basename(args.file).split('.')[0].upper()
     return args
 
 def make_range(def_value, value, intervals=6) :
