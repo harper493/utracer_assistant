@@ -36,9 +36,15 @@ class graph_base(object) :
         p, = subplot.plot(new_x, interp(new_x), label=label, color=color)
         return p
 
-    def add_legend(self) :
-        self.legend = self.subplot.legend(loc="best")
-        #self.legend.get_frame().set_alpha(0.3)
+    def add_legend(self, items=None) :
+        if items:
+            z = zip(*items)
+            print z[0]
+            print z[1]
+            self.legend = self.subplot.legend(handles=z[0], labels=z[1], loc="best")
+        else :
+            self.legend = self.subplot.legend(loc="best")
+        self.legend.get_frame().set_alpha(0.3)
         
     def add_title(self):
         if self.title :
@@ -75,7 +81,6 @@ class graph_base(object) :
 
     def show(self):
         self.add_title()
-        self.add_legend()
         self.add_note()
         plt.show()
 
@@ -92,13 +97,13 @@ class single_axis_graph(graph_base) :
         self._do_y_axis()
         for lab, y, c in zip(self.labels, self.y_values, self.colors()):
             self.add_plot(self.subplot, self.x_values, y, lab, color=c)
+        self.add_legend()
 
 
 class multi_axis_graph(graph_base) :
 
     def __init__(self, **kwargs) :
         graph_base.__init__(self, **kwargs)
-        print '^^^', self.figure, self.subplot
         self.figure.subplots_adjust(right=0.6)
         self.subplots = [ self.subplot ]
         offset = 1
@@ -110,9 +115,11 @@ class multi_axis_graph(graph_base) :
             sp.patch.set_visible(False)
             offset += 0.18
         self._do_x_axis()
+        legends = []
         for sp, l, y, c in zip(self.subplots, self.labels, self.y_values, self.colors()) :
             p = self.add_plot(sp, self.x_values, y, l, color=c)
-            sp.set_ylim(0*round(min(y), 2, round_up=False), round(max(y), 1))
+            sp.set_ylim(0, round(max(y), 1))
             sp.set_ylabel(l, color=c)
-        self.add_legend()
+            legends.append((plt.Line2D((0,1),(0,0), color=c), l))
+        self.add_legend(legends)
 
