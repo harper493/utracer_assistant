@@ -119,7 +119,7 @@ class tube_map:
             Rl = round((Eb - min_eb) / Ia(), 2)
             args.Rl = Rl
         max_ia = Ia() or self(min_eb, -min_vg)
-        min_ia = Ia() * min_ia_ratio
+        min_ia = Ia() * min_ia_ratio if Ia.start()==0 else Ia.start()
         if args.verbose :
             print '!!!', Eb, Rl, Ia, min_ia, Vg, Va, min_eb,  min_vg
         x_range = np.linspace(min_ia, max_ia, tube_map.DERIV_POINTS)
