@@ -11,7 +11,7 @@ class tube_map:
     MIN_DERIV_IA = 0.05      # lowest Ia to use when calculating derivatives
     EB_RATIO = 0.95           # fraction of max Va to use for Eb
     DERIV_POINTS = 20        # number of points to calculate for derivatives
-    DERIV_DELTA = 0.01       # delta multiplier for differential calculation
+    DERIV_DELTA = 0.005       # delta multiplier for differential calculation
 
     def __init__(self, udata):
         self.va, self.vg, self.data = udata.get()
