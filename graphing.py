@@ -7,8 +7,8 @@ import numpy as np
 from range import range
 import sys
 
-color_list = [ 'red', 'lime', 'blue', 'brown', 'orange', 'turquoise',
-            'green', 'purple', 'yellow', 'tomato', 'peru', 'hotpink',
+color_list = [ 'red', 'lime', 'blue', 'tomato', 'purple', 'turquoise', 'orange',
+            'green', 'yellow', 'brown', 'hotpink', 'peru',
                'olive']
 
 class graph_base(object) :
@@ -28,6 +28,7 @@ class graph_base(object) :
     def __init__(self, **kwargs):
         construct(self, graph_base.arg_table, kwargs)
         self.figure, self.subplot = plt.subplots()
+        self.legends = []
         #self.figure.set_size_inches(9,7, forward=True)
 
     def add_plot(self, subplot, x, y, label=None, color='black'):
@@ -36,13 +37,16 @@ class graph_base(object) :
         p, = subplot.plot(new_x, interp(new_x), label=label, color=color)
         return p
 
-    def add_legend(self, items=None) :
-        if items:
-            z = zip(*items)
+    def add_legend(self) :
+        if self.legends:
+            z = zip(*self.legends)
             self.legend = self.subplot.legend(handles=z[0], labels=z[1], loc="best")
         else :
             self.legend = self.subplot.legend(loc="best")
         self.legend.get_frame().set_alpha(0.3)
+
+    def add_legend_item(self, label, color):
+        self.legends.append((plt.Line2D((0,1),(0,0), color=color), label))
         
     def add_title(self):
         if self.title :
@@ -80,6 +84,7 @@ class graph_base(object) :
     def show(self):
         self.add_title()
         self.add_note()
+        self.add_legend()
         plt.show()
 
     def colors(self) :
@@ -95,14 +100,12 @@ class single_axis_graph(graph_base) :
         self._do_y_axis()
         for lab, y, c in zip(self.labels, self.y_values, self.colors()):
             self.add_plot(self.subplot, self.x_values, y, lab, color=c)
-        self.add_legend()
-
 
 class multi_axis_graph(graph_base) :
 
     def __init__(self, **kwargs) :
         graph_base.__init__(self, **kwargs)
-        self.figure.subplots_adjust(right=0.6)
+        self.figure.subplots_adjust(right=0.65)
         self.subplots = [ self.subplot ]
         offset = 1
         for l in self.labels[1:] :
@@ -111,13 +114,13 @@ class multi_axis_graph(graph_base) :
             sp.spines['right'].set_position(('axes', offset))
             sp.set_frame_on(True)
             sp.patch.set_visible(False)
-            offset += 0.18
+            offset += 0.16
         self._do_x_axis()
         legends = []
         for sp, l, y, c in zip(self.subplots, self.labels, self.y_values, self.colors()) :
             p = self.add_plot(sp, self.x_values, y, l, color=c)
             sp.set_ylim(0, round(max(y), 1))
             sp.set_ylabel(l, color=c)
-            legends.append((plt.Line2D((0,1),(0,0), color=c), l))
-        self.add_legend(legends)
+            sp.tick_params('y', colors=c)
+            self.add_legend_item(l, c)
 
