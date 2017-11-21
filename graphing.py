@@ -100,15 +100,10 @@ class multi_axis_graph(graph_base) :
         for l in self.labels[1:] :
             sp = self.subplot.twinx()
             self.subplots.append(sp)
-            # Move the last y-axis spine over to the right by 20% of the width of the axes
             sp.spines['right'].set_position(('axes', offset))
-
-            # To make the border of the right-most axis visible, we need to turn the frame
-            # on. This hides the other plots, however, so we need to turn its fill off.
             sp.set_frame_on(True)
             sp.patch.set_visible(False)
             offset += 0.2
-            #sp.axis["right"].toggle(all=True)
         self._do_x_axis()
         c = colors
         while len(colors) < len(self.labels) :
