@@ -7,7 +7,9 @@ import numpy as np
 from range import range
 import sys
 
-colors = [ 'red', 'green', 'blue', 'brown', 'orange' ]
+color_list = [ 'red', 'lime', 'blue', 'brown', 'orange', 'turquoise',
+            'green', 'purple', 'yellow', 'tomato', 'peru', 'hotpink',
+               'olive']
 
 class graph_base(object) :
 
@@ -26,6 +28,7 @@ class graph_base(object) :
     def __init__(self, **kwargs):
         construct(self, graph_base.arg_table, kwargs)
         self.figure, self.subplot = plt.subplots()
+        #self.figure.set_size_inches(9,7, forward=True)
 
     def add_plot(self, subplot, x, y, label=None, color='black'):
         new_x = np.linspace(min(x), max(x), num=len(x) * 10, endpoint=True)
@@ -76,16 +79,18 @@ class graph_base(object) :
         self.add_note()
         plt.show()
 
+    def colors(self) :
+        while True :
+            for c in color_list :
+                yield c
+
 class single_axis_graph(graph_base) :
 
     def __init__(self, **kwargs) :
         graph_base.__init__(self, **kwargs)
         self._do_x_axis()
         self._do_y_axis()
-        c = colors
-        while len(colors) < len(self.labels) :
-            c += colors
-        for lab, y, c in zip(self.labels, self.y_values, c):
+        for lab, y, c in zip(self.labels, self.y_values, self.colors()):
             self.add_plot(self.subplot, self.x_values, y, lab, color=c)
 
 
@@ -103,12 +108,9 @@ class multi_axis_graph(graph_base) :
             sp.spines['right'].set_position(('axes', offset))
             sp.set_frame_on(True)
             sp.patch.set_visible(False)
-            offset += 0.2
+            offset += 0.18
         self._do_x_axis()
-        c = colors
-        while len(colors) < len(self.labels) :
-            c += colors
-        for sp, l, y, c in zip(self.subplots, self.labels, self.y_values, colors) :
+        for sp, l, y, c in zip(self.subplots, self.labels, self.y_values, self.colors()) :
             p = self.add_plot(sp, self.x_values, y, l, color=c)
             sp.set_ylim(0*round(min(y), 2, round_up=False), round(max(y), 1))
             sp.set_ylabel(l, color=c)
