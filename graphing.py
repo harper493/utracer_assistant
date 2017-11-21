@@ -5,6 +5,9 @@ from utility import *
 import scipy
 import numpy as np
 from range import range
+import sys
+
+colors = [ 'red', 'green', 'blue', 'brown', 'orange' ]
 
 class graph_base(object) :
 
@@ -22,18 +25,17 @@ class graph_base(object) :
 
     def __init__(self, **kwargs):
         construct(self, graph_base.arg_table, kwargs)
-        self.subplot = host_subplot(111, axes_class=AA.Axes)
+        self.figure, self.subplot = plt.subplots()
 
-    def add_plot(self, x, y, label=None):
-        print '^^^', x, label, y
+    def add_plot(self, subplot, x, y, label=None, color='black'):
         new_x = np.linspace(min(x), max(x), num=len(x) * 10, endpoint=True)
         interp = scipy.interpolate.interp1d(x, y, kind='cubic')
-        p, = self.subplot.plot(new_x, interp(new_x), label=label)
+        p, = subplot.plot(new_x, interp(new_x), label=label, color=color)
         return p
 
     def add_legend(self) :
         self.legend = self.subplot.legend(loc="best")
-        self.legend.get_frame().set_alpha(0.3)
+        #self.legend.get_frame().set_alpha(0.3)
         
     def add_title(self):
         if self.title :
@@ -80,34 +82,40 @@ class single_axis_graph(graph_base) :
         graph_base.__init__(self, **kwargs)
         self._do_x_axis()
         self._do_y_axis()
-        for lab, y in zip(self.labels, self.y_values):
-            self.add_plot(self.x_values, y, lab)
+        c = colors
+        while len(colors) < len(self.labels) :
+            c += colors
+        for lab, y, c in zip(self.labels, self.y_values, c):
+            self.add_plot(self.subplot, self.x_values, y, lab, color=c)
 
 
 class multi_axis_graph(graph_base) :
 
     def __init__(self, **kwargs) :
         graph_base.__init__(self, **kwargs)
+        print '^^^', self.figure, self.subplot
+        self.figure.subplots_adjust(right=0.6)
+        self.subplots = [ self.subplot ]
+        offset = 1
+        for l in self.labels[1:] :
+            sp = self.subplot.twinx()
+            self.subplots.append(sp)
+            # Move the last y-axis spine over to the right by 20% of the width of the axes
+            sp.spines['right'].set_position(('axes', offset))
+
+            # To make the border of the right-most axis visible, we need to turn the frame
+            # on. This hides the other plots, however, so we need to turn its fill off.
+            sp.set_frame_on(True)
+            sp.patch.set_visible(False)
+            offset += 0.2
+            #sp.axis["right"].toggle(all=True)
         self._do_x_axis()
-        plt.subplots_adjust(right=0.75)
-        offset = 0
-        self.y_plots = []
-        for l in self.labels[1:]:
-            par = self.subplot.twinx()
-            self.y_plots.append(par)
-            new_fixed_axis = par.get_grid_helper().new_fixed_axis
-            par.axis["right"] = new_fixed_axis(loc="right", axes=par,
-                                                   offset=(offset, 0))
-            offset += 40
-            par.axis["right"].toggle(all=True)
-            par.set_ylabel(l)
-        self._do_y_axis()
-        p = self.add_plot(self.x_values, self.y_values[0], self.labels[0])
-        self.subplot.set_ylabel(self.labels[0])
-        self.subplot.axis["left"].label.set_color(p.get_color())
-        for par, l, y in zip(self.y_plots, self.labels[1:], self.y_values[1:]) :
-            p = self.add_plot(self.x_values, y, l)
-            par.set_ylim(0, round(max(y)))
-            par.axis["right"].label.set_color(p.get_color())
+        c = colors
+        while len(colors) < len(self.labels) :
+            c += colors
+        for sp, l, y, c in zip(self.subplots, self.labels, self.y_values, colors) :
+            p = self.add_plot(sp, self.x_values, y, l, color=c)
+            sp.set_ylim(0*round(min(y), 2, round_up=False), round(max(y), 1))
+            sp.set_ylabel(l, color=c)
         self.add_legend()
 
