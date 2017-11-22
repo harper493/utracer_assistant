@@ -18,6 +18,7 @@ class graph_base(object) :
     'y_values' : [[]],
     'x_axis' : None,
     'x_label' : '',
+    'y_label' : '',
     'labels' : [],
     'title' : '',
     'subtitle' : '',
@@ -80,6 +81,8 @@ class graph_base(object) :
         if len(self.labels) < len(values):
             self.labels += [''] * (len(values) - len(self.labels))
         self.subplot.set_ylim(self.y_min, self.y_max)
+        if self.y_label :
+            self.subplot.set_ylabel(self.y_label)
 
     def show(self):
         self.add_title()
