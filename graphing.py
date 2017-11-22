@@ -7,8 +7,8 @@ import numpy as np
 from range import range
 import sys
 
-color_list = [ 'red', 'lime', 'blue', 'tomato', 'purple', 'turquoise', 'orange',
-            'green', 'yellow', 'brown', 'hotpink', 'peru',
+color_list = [ 'red', 'lime', 'mediumblue', 'orange', 'purple', 'turquoise',
+               'green', 'yellow', 'brown', 'deepskyblue', 'hotpink', 'peru', 'tomato',
                'olive']
 
 class graph_base(object) :
