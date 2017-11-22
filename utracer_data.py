@@ -28,7 +28,10 @@ class utracer_data(object) :
                 r.append([self.data[0][i]] + list(v))
             self.data = r
         self.make_axes()
-        
+        if self.vg[0] > self.vg[-1] :
+            self.vg = self.vg[::-1]
+            self.data = [ d[::-1] for d in self.data ]
+
     def make_axes(self):
         self.vg = [-d for d in self.data[0]]
         self.va = [d[0] for d in self.data[1:]]
