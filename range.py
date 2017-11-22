@@ -92,7 +92,7 @@ class range(object) :
                 self._start, self._end = min(nvalues), max(nvalues)
                 self._interval = None
             elif len(nvalues)==1 :
-                self._start, self._interval, self._end, self._values = None, None, nvalues[0], None
+                self._start, self._interval, self._end, self._values = 0, None, nvalues[0], None
             elif len(nvalues)==2 :
                 self._start, self._interval, self._end, self._values = nvalues[0], None, nvalues[1], None
             else :
