@@ -83,6 +83,28 @@ class tube_map:
     def Vg_from_Ia(self, Va, Ia):
         return x_from_y(lambda vg: self(Va, vg), self.vg_range(), Ia)
 
+    def mu(self, ia=None):
+        '''
+        Calculate mu by calculating Va and Vg corresponding to the given Ia,
+        then tweaking Ia and seeing what the corresponding new Va and Vg
+        values are, and taking the ratio.
+        '''
+        ia = ia or self.data[-3][-3]           # choose a good data point
+        va = self.va_span() / 2
+        while True :
+            vg = self.Vg_from_Ia(va, ia)
+            va2 = self.Va_from_Ia(vg, ia)
+            dva2 = self.Va_from_Ia(vg, ia*0.99)
+            dvg = self.Vg_from_Ia(va, ia*0.99)
+            ddva = va2 - dva2
+            ddvg = vg - dvg
+            if ddvg < 0.001 :
+                va *= 1.2
+            else :
+                break
+        mu = ddva / ddvg
+        return mu
+
     def get_one_derivative(self, Vg, Va, Ia, verbose=False):
         if Vg :
             va = self.Va_from_Ia(Vg, Ia)
