@@ -122,7 +122,8 @@ class multi_axis_graph(graph_base) :
         legends = []
         for sp, l, y, c in zip(self.subplots, self.labels, self.y_values, self.colors()) :
             p = self.add_plot(sp, self.x_values, y, l, color=c)
-            sp.set_ylim(0, round(max(y), 1))
+            ymin = round(min(min(y), 0), 1, round_up=False)
+            sp.set_ylim(ymin, round(max(y), 1))
             sp.set_ylabel(l, color=c)
             sp.tick_params('y', colors=c)
             self.add_legend_item(l, c)

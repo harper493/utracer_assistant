@@ -27,7 +27,7 @@ class tube_map:
         self.interp = scipy.interpolate.RectBivariateSpline(self.va, self.vg, np.array(self.data), kx=degree)
 
     def __call__(self, Va, Vg):
-        result = float(self.interp.ev(Va, -Vg))
+        result = float(self.interp.ev(Va, Vg))
         if result < 1e-3 :
             result = 0
         return result
@@ -54,10 +54,10 @@ class tube_map:
         return min(self.vg)
 
     def vg_max(self):
-        return -max(self.vg)
+        return max(self.vg)
 
     def vg_span(self):
-        return self.vg_min() - self.vg_max()
+        return self.vg_max() - self.vg_min()
 
     def vg_values(self):
         return self.original_vg
@@ -162,7 +162,7 @@ class tube_map:
         rp = zipped[1]
         mu = zipped[2]
         va = zipped[3]
-        vg = [ -vg for vg in zipped[4]]
+        vg = [ vg for vg in zipped[4]]
         return (x_range, gm, rp, mu, va, vg)
 
     def extrapolate_slope(self, x, ia):

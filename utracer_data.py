@@ -33,7 +33,7 @@ class utracer_data(object) :
             self.data = [ d[::-1] for d in self.data ]
 
     def make_axes(self):
-        self.vg = [-d for d in self.data[0]]
+        self.vg = self.data[0]
         self.va = [d[0] for d in self.data[1:]]
         self.data = [d[1:] for d in self.data[1:]]
 

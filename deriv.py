@@ -80,8 +80,8 @@ def do_plate_curves(tm, args) :
     curves = []
     labels = []
     for vg in args.Vg :
-        curves.append([tm(va, -vg) for va in args.Va])
-        labels.append("Vg = %.1f" % (-vg,))
+        curves.append([tm(va, vg) for va in args.Va])
+        labels.append("Vg = %.1f" % (vg,))
     if args.verbose :
         for c, l in zip(curves, labels) :
             print "%10s %s" % (l, '  '.join([ "%.1f" % cc for cc in c]))
@@ -93,7 +93,7 @@ def do_grid_curves(tm, args) :
     curves = []
     labels = []
     for va in args.Va :
-        curves.append([tm(va, -vg) for vg in args.Vg])
+        curves.append([tm(va, vg) for vg in args.Vg])
         labels.append("Va = %.0f" % (va,))
     if args.verbose :
         for c, l in zip(curves, labels) :

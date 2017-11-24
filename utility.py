@@ -14,6 +14,9 @@ import numpy as np
 #
 
 def round(value, digits=1, round_up=True) :
+    sign = value < 0
+    if sign :
+        value, round_up = -value, not round_up
     remainder = value
     result = 0
     if value > 0 :
@@ -33,6 +36,8 @@ def round(value, digits=1, round_up=True) :
             digits -= 1
         if round_up :
             result += one_digit
+    if sign :
+        result = -result
     return result
         
 #
