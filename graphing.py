@@ -17,6 +17,7 @@ class graph_base(object) :
     'x_values': [],
     'y_values' : [[]],
     'x_axis' : None,
+    'y_axis' : None,
     'x_label' : '',
     'y_label' : '',
     'labels' : [],
@@ -76,18 +77,24 @@ class graph_base(object) :
         values = values or self.y_values
         if isinstance(values, range) :
             values = self.values.values()
-        self.y_max = round(max([max(y) for y in values]), 2)
-        self.y_min = round(min([min(y) for y in values]), 2, round_up=False)
+        if self.y_axis :
+            y_min, y_max = self.y_axis
+        else :
+            self.y_max = round(max([max(y) for y in values]), 2)
+            self.y_min = round(min([min(y) for y in values]), 2, round_up=False)
         if len(self.labels) < len(values):
             self.labels += [''] * (len(values) - len(self.labels))
         self.subplot.set_ylim(self.y_min, self.y_max)
         if self.y_label :
             self.subplot.set_ylabel(self.y_label)
 
-    def show(self):
+    def finish(self):
         self.add_title()
         self.add_note()
         self.add_legend()
+
+    def show(self) :
+        self.finish()
         plt.show()
 
     def colors(self) :
