@@ -16,7 +16,6 @@ class graph_base(object) :
     arg_table = { \
     'x_values': [],
     'y_values' : [[]],
-    'x_axis' : None,
     'y_axis' : None,
     'x_label' : '',
     'y_label' : '',
@@ -78,7 +77,7 @@ class graph_base(object) :
         if isinstance(values, range) :
             values = self.values.values()
         if self.y_axis :
-            y_min, y_max = self.y_axis
+            self.y_min, self.y_max = min(self.y_axis), max(self.y_axis)
         else :
             self.y_max = round(max([max(y) for y in values]), 2)
             self.y_min = round(min([min(y) for y in values]), 2, round_up=False)

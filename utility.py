@@ -1,5 +1,5 @@
 __all__ = [ 'round', 'cmpfn', 'flatten_reduce',
-            'flatten_min', 'flatten_min', 'x_from_y', 'pderiv', 'scale_list', 'camel_to_title',
+            'flatten_min', 'flatten_max', 'x_from_y', 'pderiv', 'scale_list', 'camel_to_title',
             'make_plural', 'make_singular', 'is_irregular_plural', 'make_indef_article',
             'construct', 'add_default_arg', 'check_unused_args', 'contains_any', 'translate' ]
 
@@ -35,8 +35,8 @@ def round(value, digits=1, round_up=True) :
             result += bound
             remainder -= bound
             digits -= 1
-        if round_up :
-            result += one_digit
+    if round_up and result < value :
+        result += one_digit
     if sign :
         result = -result
     return result

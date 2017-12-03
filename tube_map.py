@@ -16,6 +16,7 @@ class tube_map:
     def __init__(self, udata):
         self.va, self.vg, self.data = udata.get()
         self.original_va, self.original_vg = copy(self.va), copy(self.vg)
+        self._ia_min, self._ia_max = flatten_min(self.data), flatten_max(self.data)
         self.udata = udata
         if True :
             print self.va
@@ -33,13 +34,13 @@ class tube_map:
         return result
 
     def va_range(self):
-        return (min(self.va), max(self.va))
+        return (self.va_min(), self.va_max())
 
     def va_min(self):
-        return min(self.va)
+        return min(self.original_va)
 
     def va_max(self):
-        return max(self.va)
+        return max(self.original_va)
 
     def va_values(self):
         return self.original_va
@@ -51,10 +52,10 @@ class tube_map:
         return self.va_max() - self.va_min()
 
     def vg_min(self):
-        return min(self.vg)
+        return min(self.original_vg)
 
     def vg_max(self):
-        return max(self.vg)
+        return max(self.original_vg)
 
     def vg_span(self):
         return self.vg_max() - self.vg_min()
@@ -63,10 +64,10 @@ class tube_map:
         return self.original_vg
 
     def ia_min(self):
-        return min([min(d) for d in self.data])
+        return self._ia_min
 
     def ia_max(self):
-        return max([max(d) for d in self.data])
+        return self._ia_max
 
     def ia_range(self):
         return (self.ia_min(), self.ia_max())

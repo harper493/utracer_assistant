@@ -52,6 +52,12 @@ class data_element(object) :
     def get_attribute_value(self, aname) :
         return self.attributes[aname].get_value()
 
+    def __getitem__(self, aname) :
+        return self.get_attribute_value(aname)
+
+    def is_updated(self, aname) :
+        return self.attributes[aname].updated
+
     def load_config(self, path) :
         f = open(path, 'r')
         for line in f :
@@ -95,9 +101,7 @@ class data_element(object) :
     def display(self, start_row=0) :
         row = start_row
         maxcols = max([2*len(r) for r in self.display_format])
-        print '&&&', self.display_format
         for r in self.display_format :
-            print '***', r
             if len(r)==1 and r[0][0]=='$' :
                 Label(self.parent, text=r[0][1:], bg=BGCOL_LABEL) . \
                     grid(row=row, columnspan=maxcols, padx=GLOBAL_TITLE_PADX, pady=GLOBAL_TITLE_PADY, \
@@ -169,6 +173,7 @@ class data_attribute(object) :
                 elif pname=='choices' :
                     self.choices = pval
         self.value = self.dflt
+        self.updated = False
         self.widget = None
         self.var = None
 
@@ -222,6 +227,8 @@ class data_attribute(object) :
 
     def update(self, name, index, mode) :
         if self.widget :
+            if self.name is not None :
+                self.updated = True
             if self.validate(self.get_widget_value()) :
                 self.widget.config(background=BGCOL_GOOD)
             else :
