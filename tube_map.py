@@ -18,7 +18,7 @@ class tube_map:
         self.original_va, self.original_vg = copy(self.va), copy(self.vg)
         self._ia_min, self._ia_max = flatten_min(self.data), flatten_max(self.data)
         self.udata = udata
-        if True :
+        if False :
             print self.va
             print self.vg
             for d in self.data :
@@ -129,7 +129,7 @@ class tube_map:
                         min_eb_ratio=None,
                         min_vg_ratio=None,
                         min_ia_ratio=None,
-                        args={}) :
+                        verbose=False) :
         min_eb_ratio = min_eb_ratio or tube_map.MIN_DERIV_VA
         min_vg_ratio = min_vg_ratio or tube_map.MIN_DERIV_VG
         min_vg = min(1, self.vg_span() * min_vg_ratio)
@@ -140,10 +140,9 @@ class tube_map:
         if Eb and Rl==0 :
             min_eb = min(Eb, self.Va_from_Ia(min_vg, Ia()) * 1.1)
             Rl = round((Eb - min_eb) / Ia(), 2)
-            args.Rl = Rl
         max_ia = Ia() or self(min_eb, -min_vg)
         min_ia = Ia() * min_ia_ratio if Ia.start()==0 else Ia.start()
-        if args.verbose :
+        if verbose :
             print '!!!', Eb, Rl, Ia, min_ia, Vg, Va, min_eb,  min_vg
         x_range = np.linspace(min_ia, max_ia, tube_map.DERIV_POINTS)
         derivs = []
@@ -157,7 +156,7 @@ class tube_map:
             elif Vg :
                 va = self.Va_from_Ia(Vg, ia)
                 vg = Vg
-            derivs.append(self.get_one_derivative(vg, va, ia, verbose=args.verbose))
+            derivs.append(self.get_one_derivative(vg, va, ia, verbose=verbose))
         zipped = zip(*derivs)
         gm = zipped[0]
         rp = zipped[1]

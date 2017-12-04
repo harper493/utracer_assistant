@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5383fc71-115a-4bf8-80a7-e1603174857c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deriv.py" afterPath="$PROJECT_DIR$/deriv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphing.py" afterPath="$PROJECT_DIR$/graphing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tube_map.py" afterPath="$PROJECT_DIR$/tube_map.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utility.py" afterPath="$PROJECT_DIR$/utility.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utracer_data.py" afterPath="$PROJECT_DIR$/utracer_data.py" />
-    </list>
+    <list default="true" id="5383fc71-115a-4bf8-80a7-e1603174857c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,32 +16,93 @@
           <file leaf-file-name="deriv.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/deriv.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="603">
-                  <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+                <state relative-caret-position="914">
+                  <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
                   <folding>
-                    <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-                    <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+                    <element signature="e#42#52#0" expanded="true" />
+                    <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="utracer_data.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="utracer_data.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/utracer_data.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="396">
+                  <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#10#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tube_map.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tube_map.py">
+          <file leaf-file-name="utility.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/utility.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="97">
-                  <caret line="155" column="21" lean-forward="true" selection-start-line="155" selection-start-column="21" selection-end-line="155" selection-end-column="21" />
-                  <folding />
+                <state relative-caret-position="12">
+                  <caret line="1" column="87" lean-forward="false" selection-start-line="1" selection-start-column="87" selection-end-line="1" selection-end-column="87" />
+                  <folding>
+                    <element signature="e#269#280#0" expanded="true" />
+                    <marker date="1512243912767" expanded="true" signature="1129:1130" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="1158:1250" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="1268:1363" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="1393:2035" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="1398:1551" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+                    <marker date="1512243912767" expanded="true" signature="1852:2022" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="1885:1937" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="1951:2003" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2062:2217" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2067:2132" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+                    <marker date="1512243912767" expanded="true" signature="2219:2286" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2314:2358" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2360:2422" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2449:2712" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2507:2694" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2532:2628" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2564:2628" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2714:2947" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="2996:3328" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3066:3310" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3090:3289" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3135:3289" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3187:3289" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3330:3432" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3471:3564" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3494:3547" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3566:3617" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3641:3943" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3968:4694" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4756:5259" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="5009:5204" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="5047:5153" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="5260:5372" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="5472:5718" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="5519:5601" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="5777:5826" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="5855:6315" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6065:6256" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6105:6211" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6317:6399" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6448:6499" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6557:6601" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6726:6792" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6831:7296" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6876:7205" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="6963:7205" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="7059:7205" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="7298:7552" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="7593:8042" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="7726:8042" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="7751:7895" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="7910:8015" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -57,12 +111,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="tube_map.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tube_map.py">
+          <file leaf-file-name="deriv.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/deriv.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1683">
-                  <caret line="59" column="42" lean-forward="false" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
-                  <folding />
+                <state relative-caret-position="396">
+                  <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#42#52#0" expanded="true" />
+                    <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+                    <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -70,41 +132,50 @@
           <file leaf-file-name="range.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/range.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="335">
-                  <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+                <state relative-caret-position="241">
+                  <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="argparse.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/lib/python2.7/argparse.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="1700" column="0" lean-forward="false" selection-start-line="1700" selection-start-column="0" selection-end-line="1700" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="graphing.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/graphing.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="617">
+                  <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#9#0" expanded="true" />
+                    <element signature="e#0#48#0" expanded="true" />
+                    <marker date="1512261856277" expanded="true" signature="423:3298" ph="..." />
+                    <marker date="1512261856277" expanded="true" signature="3174:3195" ph="..." />
+                    <marker date="1512261856277" expanded="true" signature="3219:3298" ph="..." />
+                    <marker date="1512261856277" expanded="true" signature="3240:3298" ph="..." />
+                    <marker date="1512261856277" expanded="true" signature="3337:3614" ph="..." />
+                    <marker date="1512261856277" expanded="true" signature="3373:3614" ph="..." />
+                    <marker date="1512261856277" expanded="true" signature="3875:4113" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="graphing.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/graphing.py">
+          <file leaf-file-name="tube_map.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tube_map.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="124" column="58" lean-forward="false" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="utility.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utility.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_axes.py" pinned="false" current-in-tab="false">
-            <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="211">
-                  <caret line="566" column="0" lean-forward="false" selection-start-line="566" selection-start-column="0" selection-end-line="566" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="260">
+                  <caret line="105" column="2" lean-forward="false" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#0#12#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -150,7 +221,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -163,7 +234,21 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="utracer_assistant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utracer_assistant" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="full.screen.before.presentation.mode" value="false" />
@@ -265,27 +350,37 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1058" extended-state="0" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="2495" height="1444" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14028056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32953683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39939255" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30121705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39858013" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -337,37 +432,21 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_range.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21495">
-          <caret line="1433" column="0" lean-forward="false" selection-start-line="1433" selection-start-column="0" selection-end-line="1433" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test_range.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
@@ -376,29 +455,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4605">
           <caret line="307" column="44" lean-forward="false" selection-start-line="307" selection-start-column="44" selection-end-line="307" selection-end-column="44" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
@@ -407,69 +480,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21495">
-          <caret line="1433" column="0" lean-forward="false" selection-start-line="1433" selection-start-column="0" selection-end-line="1433" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_range.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20850">
-          <caret line="1433" column="0" lean-forward="false" selection-start-line="1433" selection-start-column="0" selection-end-line="1433" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
+    <entry file="file://$PROJECT_DIR$/test_range.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8640">
           <caret line="576" column="0" lean-forward="false" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="0" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
@@ -478,29 +510,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2475">
           <caret line="177" column="7" lean-forward="true" selection-start-line="177" selection-start-column="7" selection-end-line="177" selection-end-column="7" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
@@ -512,39 +538,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21495">
-          <caret line="1433" column="0" lean-forward="false" selection-start-line="1433" selection-start-column="0" selection-end-line="1433" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2175">
           <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
@@ -556,32 +564,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21540">
-          <caret line="1436" column="0" lean-forward="false" selection-start-line="1436" selection-start-column="0" selection-end-line="1436" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23415">
@@ -589,101 +574,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20895">
-          <caret line="1436" column="0" lean-forward="false" selection-start-line="1436" selection-start-column="0" selection-end-line="1436" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3135">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20895">
-          <caret line="1436" column="0" lean-forward="false" selection-start-line="1436" selection-start-column="0" selection-end-line="1436" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3765">
           <caret line="251" column="50" lean-forward="false" selection-start-line="251" selection-start-column="50" selection-end-line="251" selection-end-column="50" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3525">
           <caret line="244" column="52" lean-forward="false" selection-start-line="244" selection-start-column="52" selection-end-line="244" selection-end-column="52" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3135">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="209" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
     <entry file="file://$PROJECT_DIR$/utracer_derivatives" />
     <entry file="file://$PROJECT_DIR$/utracer_derivatives" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
@@ -693,90 +638,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_range.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="906">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="566" column="0" lean-forward="false" selection-start-line="566" selection-start-column="0" selection-end-line="566" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_base.py" />
+    <entry file="file://$PROJECT_DIR$/test_range.py" />
+    <entry file="file://$PROJECT_DIR$/utracer_derivatives.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/axes/_axes.py" />
     <entry file="file://$PROJECT_DIR$/range.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="241">
+          <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="396">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding>
-            <marker date="1511513636000" expanded="true" signature="2486:2495" ph="..." />
-            <marker date="1511513636000" expanded="true" signature="3439:3539" ph="..." />
+            <element signature="e#42#52#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="3572:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3628:3659" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4185:4592" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4273:4388" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4837:4981" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4998:5162" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utracer_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tube_map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1683">
-          <caret line="59" column="42" lean-forward="false" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="396">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utility.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="12">
+          <caret line="1" column="87" lean-forward="false" selection-start-line="1" selection-start-column="87" selection-end-line="1" selection-end-column="87" />
+          <folding>
+            <element signature="e#269#280#0" expanded="true" />
+            <marker date="1512243912767" expanded="true" signature="1129:1130" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="1158:1250" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="1268:1363" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="1393:2035" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="1398:1551" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1512243912767" expanded="true" signature="1852:2022" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="1885:1937" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="1951:2003" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2062:2217" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2067:2132" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1512243912767" expanded="true" signature="2219:2286" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2314:2358" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2360:2422" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2449:2712" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2507:2694" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2532:2628" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2564:2628" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2714:2947" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="2996:3328" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3066:3310" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3090:3289" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3135:3289" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3187:3289" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3330:3432" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3471:3564" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3494:3547" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3566:3617" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3641:3943" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="3968:4694" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="4756:5259" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="5009:5204" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="5047:5153" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="5260:5372" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="5472:5718" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="5519:5601" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="5777:5826" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="5855:6315" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6065:6256" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6105:6211" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6317:6399" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6448:6499" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6557:6601" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6726:6792" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6831:7296" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6876:7205" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="6963:7205" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="7059:7205" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="7298:7552" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="7593:8042" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="7726:8042" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="7751:7895" ph="..." />
+            <marker date="1512243912767" expanded="true" signature="7910:8015" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="124" column="58" lean-forward="false" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="617">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <marker date="1512261856277" expanded="true" signature="423:3298" ph="..." />
+            <marker date="1512261856277" expanded="true" signature="3174:3195" ph="..." />
+            <marker date="1512261856277" expanded="true" signature="3219:3298" ph="..." />
+            <marker date="1512261856277" expanded="true" signature="3240:3298" ph="..." />
+            <marker date="1512261856277" expanded="true" signature="3337:3614" ph="..." />
+            <marker date="1512261856277" expanded="true" signature="3373:3614" ph="..." />
+            <marker date="1512261856277" expanded="true" signature="3875:4113" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tube_map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="105" column="2" lean-forward="false" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -57,7 +57,7 @@ def do_derivs(tm, args) :
     else:
         args.Va = args.Va.must_be_unique()
         note = "Va = %.0f V" % (args.Va,)
-    derivs = tm.get_derivatives(Eb=args.Eb, Va=args.Va, Vg=args.Vg, Rl=args.Rl, Ia=args.Ia, args=args)
+    derivs = tm.get_derivatives(Eb=args.Eb, Va=args.Va, Vg=args.Vg, Rl=args.Rl, Ia=args.Ia, verbose=args.verbose)
 
     if args.output:
         sys.stdout.write(','.join(['Ia', 'Gm', 'Rp', 'mu', 'Va', 'Vg']) + '\n')

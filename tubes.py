@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from Tkinter import *
 from tube_map import tube_map
 from utracer_data import utracer_data
@@ -51,6 +53,7 @@ class main_panel(Frame) :
         self.canvas = None
         self.plot_fn = None
         self.plot_params = None
+        self.data_epoch = 0
 
     def make_button(self, label, command) :
         Button(self.buttons, text=label, command=command, \
@@ -86,10 +89,45 @@ class main_panel(Frame) :
         self.plot_fn = self.plot_plate
 
     def grid(self) :
-        print 'Grid'
+        try :
+            f = self.grid_frame
+        except AttributeError :
+            self.grid_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
+            self.grid_data = data_element(
+                parent = self.grid_frame,
+                attributes = (('min_vg', 'Min Vg', { 'dflt':round(self.tube_map.vg_min(), 2) }),
+                              ('max_vg', 'Max Vg', { 'dflt':0 }),
+                              ('min_va', 'Min Va', { 'dflt':0 }),
+                              ('max_va', 'Max Va', { 'dflt':round(self.tube_map.va_max(), 2) }),
+                              ('min_ia', 'Min Ia', { 'dflt':0 }),
+                              ('max_ia', 'Max Ia', { 'dflt':round(self.tube_map.ia_max(), 2) })),
+                format = (('min_vg', 'max_vg'),
+                          ('min_va', 'max_va'),
+                          ('min_ia', 'max_ia'),))
+        self.grid_frame.pack(side=TOP, anchor=W, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
+        self.plot_params = self.grid_frame
+        self.grid_data.display()
+        self.plot_fn = self.plot_grid
 
     def deriv(self) :
-        print 'Deriv'
+        try :
+            f = self.deriv_frame
+        except AttributeError :
+            self.deriv_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
+            self.deriv_data = data_element(
+                parent = self.deriv_frame,
+                attributes = (('min_ia', 'Min Ia', { 'dflt':0 }),
+                              ('max_ia', 'Max Ia', { 'dflt':round(self.tube_map.ia_max()/2, 2) }),
+                              ('va', '*Fixed Va', { 'dflt':0 }),
+                              ('vg', '*Fixed Vg', { 'dflt':0 }),
+                              ('eb', '*Fixed Eb', { 'dflt':0 }),
+                              ('rl', 'Rl', { 'dflt':0 }),
+                              ('show_va_vg', '?Show Va & Vg')),
+                format = (('min_ia', 'max_ia'), ('va',), ('vg',), ('eb', 'rl'), ('show_va_vg',)))
+        self.deriv_frame.pack(side=TOP, anchor=W, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
+        self.plot_params = self.deriv_frame
+        self.deriv_data.display()
+        self.plot_fn = self.plot_deriv
 
     def op_change(self, *args) :
         if self.plot_params :
@@ -99,6 +137,7 @@ class main_panel(Frame) :
     def data_change(self, *args) :
         utd = utracer_data(DATA_DIRECTORY + self.data_source.get())
         self.tube_map = tube_map(utd)
+        self.data_epoch += 1
 
     def show_graph(self, graph) :
         try :
@@ -126,6 +165,47 @@ class main_panel(Frame) :
         graph = single_axis_graph(x_values=x_values, y_values=curves, labels=labels, x_label="Va",
                                   y_label="Ia (mA)", y_axis=y_axis,
                                   title=self.data_source.get(), subtitle=u"Plate Curves")
+        graph.finish()
+        self.show_graph(graph)
+
+    def plot_grid(self) :
+        curves = []
+        labels = []
+        d = self.grid_data
+        x_values = range(d['min_vg'], d['max_vg'])
+        y_axis = range(d['min_ia'], d['max_ia'])
+        if d.is_updated('min_va') or d.is_updated('max_va') :
+            va_values = range(d['min_va'], d['max_va'])
+        else :
+            va_values = self.tube_map.va_values()
+        for va in va_values :
+            curves.append([self.tube_map(va, vg) for vg in x_values])
+            labels.append("Va = %.0f" % (va,))
+        graph = single_axis_graph(x_values=x_values, y_values=curves, labels=labels, x_label="Vg",
+                                  y_label="Ia (mA)", y_axis=y_axis,
+                                  title=self.data_source.get(), subtitle=u"Grid Curves")
+
+    def plot_deriv(self) :
+        eb = va = vg = rl = 0
+        method = self.deriv_data.get_radio_value()
+        d = self.deriv_data
+        ia = range(d['min_ia'], d['max_ia'])
+        if method=='eb' :
+            eb, rl = d['eb'], d['rl']
+            note = u"Eb = %.0f V Rl=%.1f KΩ" % (eb, rl)
+        elif method=='vg':
+            vg = d['vg']
+            note = "Vg = %.2f V" % (vg,)
+        else :                  # must be 'va'
+            va = d['va']
+            note = "Va = %.0f V" % (va,)
+        derivs = self.tube_map.get_derivatives(Eb=eb, Va=va, Vg=vg, Rl=rl, Ia=ia)
+        labels = ["Gm (mA/V)", u"Rp (KΩ)", u"µ"]
+        if d['show_va_vg'] :
+            labels += ["Va", "Vg"]
+        graph = multi_axis_graph(x_values=derivs[0], y_values=derivs[1:len(labels) + 1],
+                                 labels=labels, x_label="Ia (ma)", title=self.data_source.get(),
+                                 subtitle=u"Gm, Rp and µ", note=note)
         graph.finish()
         self.show_graph(graph)
 

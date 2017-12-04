@@ -11,6 +11,7 @@ class data_element(object) :
         self.display_format = format or []
         self.parent = parent
         self.title = title
+        self.radioval = StringVar()
         if attributes :
             self.add_attributes(attributes)
 
@@ -40,9 +41,11 @@ class data_element(object) :
     def _make_attribute(self, params) :
         try :
             t = params[2]['type']
-        except KeyError :
+        except (KeyError, IndexError) :
             t = 'float'
-        if t=='float' :
+        if params[1][0]=='?' :
+            return data_attribute_check(params)
+        elif t=='float' :
             return data_attribute_float(params) 
         elif t=='choice' :
             return data_attribute_choice(params) 
@@ -50,10 +53,18 @@ class data_element(object) :
             raise NameError, "unknown data attribute type '%s'" % t
 
     def get_attribute_value(self, aname) :
-        return self.attributes[aname].get_value()
+        attr = self.attributes[aname]
+        return attr.get_value()
 
     def __getitem__(self, aname) :
         return self.get_attribute_value(aname)
+
+    def get_radio_value(self) :
+        rv = self.radioval.get()
+        for n,attr in self.attributes.items() :
+            if rv==attr.descr[1:] :
+                return n
+        return ''
 
     def is_updated(self, aname) :
         return self.attributes[aname].updated
@@ -110,10 +121,20 @@ class data_element(object) :
                 col = 0
                 for a in r :
                     attr = self.attributes[a]
-                    Label(self.parent, text=attr.descr, bg=BGCOL_BG). \
-                        grid(row=row, column=col, padx=GLOBAL_LABEL_PADX, pady=GLOBAL_PADY, sticky=W)
-                    attr.make_widget(self.parent). \
-                        grid(row=row, column=col+1, padx=GLOBAL_LABEL_PADX, pady=GLOBAL_PADY, sticky=W)
+                    if attr.descr[0]=='*' :
+                        attr.label = Radiobutton(self.parent, text=attr.descr[1:], bg=BGCOL_BG,
+                                    variable=self.radioval, anchor=W, value=attr.descr[1:])
+                    elif attr.descr[0]=='?' :
+                        var = IntVar()
+                        attr.label = Checkbutton(self.parent, text=attr.descr[1:], bg=BGCOL_BG,
+                                                 anchor=W, variable=var)
+                        attr.label.var = var
+                    else :
+                        attr.label = Label(self.parent, text=attr.descr, bg=BGCOL_BG)
+                    attr.label.grid(row=row, column=col, padx=GLOBAL_LABEL_PADX, pady=GLOBAL_PADY, sticky=W)
+                    if attr.descr[0]!='?' :
+                        attr.make_widget(self.parent). \
+                            grid(row=row, column=col+1, padx=GLOBAL_LABEL_PADX, pady=GLOBAL_PADY, sticky=W)
                     col += 2
             row += 1
         return row
@@ -156,7 +177,7 @@ class data_attribute(object) :
         self.datatype, self.dflt, self.range, self.validator, self.choices = float, None, None, None, None
         self.readonly = False
         self.width = GLOBAL_ENTRY_WIDTH
-        if len(params)>=2 :
+        if len(params)>=3 :
             for pname, pval in params[2].iteritems() :
                 if pname=='datatype' :
                     self.datatype = pval
@@ -248,6 +269,20 @@ class data_attribute_scalar(data_attribute) :
     def get_widget_value(self) :
         if self.widget :
             return self.widget.get()
+        else :
+            return None
+
+class data_attribute_check(data_attribute) :
+
+    def __init__(self, params) :
+        data_attribute.__init__(self, params)
+
+    def make_my_widget(self, parent) :
+        self.widget = None
+
+    def get_value(self) :
+        if self.label :
+            return self.label.var.get() != 0
         else :
             return None
 
