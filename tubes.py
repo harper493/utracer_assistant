@@ -51,9 +51,14 @@ class main_panel(Frame) :
         self.canvas_frame = Frame(self, bg=COL_BG, width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
         self.canvas_frame.pack(side=RIGHT, expand=False)
         self.canvas = None
+        self.plate_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
+        self.grid_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
+        self.deriv_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
+        self.make_plate_data()
+        self.make_grid_data()
+        self.make_deriv_data()
         self.plot_fn = None
         self.plot_params = None
-        self.data_epoch = 0
 
     def make_button(self, label, command) :
         Button(self.buttons, text=label, command=command, \
@@ -68,66 +73,66 @@ class main_panel(Frame) :
         return None
 
     def plate(self) :
-        try :
-            f = self.plate_frame
-        except AttributeError :
-            self.plate_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
-            self.plate_data = data_element(
-                parent = self.plate_frame,
-                attributes = (('min_va', 'Min Va', { 'dflt':0 }),
-                              ('max_va', 'Max Va', { 'dflt':round(self.tube_map.va_max(), 2) }),
-                              ('min_vg', 'Min Vg', { 'dflt':round(self.tube_map.vg_min(), 2) }),
-                              ('max_vg', 'Max Vg', { 'dflt':0 }),
-                              ('min_ia', 'Min Ia', { 'dflt':0 }),
-                              ('max_ia', 'Max Ia', { 'dflt':round(self.tube_map.ia_max(), 2) })),
-                format = (('min_va', 'max_va'),
-                          ('min_vg', 'max_vg'),
-                          ('min_ia', 'max_ia'),))
         self.plate_frame.pack(side=TOP, anchor=W, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
         self.plot_params = self.plate_frame
         self.plate_data.display()
         self.plot_fn = self.plot_plate
 
+    def make_plate_data(self) :
+        self.plate_data = data_element(
+            parent = self.plate_frame,
+            attributes = (('min_va', 'Min Va', { 'dflt':0 }),
+                          ('max_va', 'Max Va', { 'dflt':round(self.get_tm_data(tube_map.va_max), 2) }),
+                          ('min_vg', 'Min Vg', { 'dflt':round(self.get_tm_data(tube_map.vg_min), 2) }),
+                          ('max_vg', 'Max Vg', { 'dflt':0 }),
+                          ('min_ia', 'Min Ia', { 'dflt':0 }),
+                          ('max_ia', 'Max Ia', { 'dflt':round(self.get_tm_data(tube_map.ia_max), 2) })),
+            format = (('min_va', 'max_va'),
+                      ('min_vg', 'max_vg'),
+                      ('min_ia', 'max_ia'),))
+
     def grid(self) :
-        try :
-            f = self.grid_frame
-        except AttributeError :
-            self.grid_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
-            self.grid_data = data_element(
-                parent = self.grid_frame,
-                attributes = (('min_vg', 'Min Vg', { 'dflt':round(self.tube_map.vg_min(), 2) }),
-                              ('max_vg', 'Max Vg', { 'dflt':0 }),
-                              ('min_va', 'Min Va', { 'dflt':0 }),
-                              ('max_va', 'Max Va', { 'dflt':round(self.tube_map.va_max(), 2) }),
-                              ('min_ia', 'Min Ia', { 'dflt':0 }),
-                              ('max_ia', 'Max Ia', { 'dflt':round(self.tube_map.ia_max(), 2) })),
-                format = (('min_vg', 'max_vg'),
-                          ('min_va', 'max_va'),
-                          ('min_ia', 'max_ia'),))
         self.grid_frame.pack(side=TOP, anchor=W, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
         self.plot_params = self.grid_frame
         self.grid_data.display()
         self.plot_fn = self.plot_grid
 
+    def make_grid_data(self) :
+        self.grid_data = data_element(
+            parent = self.grid_frame,
+            attributes = (('min_vg', 'Min Vg', { 'dflt':round(self.get_tm_data(tube_map.vg_min), 2) }),
+                          ('max_vg', 'Max Vg', { 'dflt':0 }),
+                          ('min_va', 'Min Va', { 'dflt':0 }),
+                          ('max_va', 'Max Va', { 'dflt':round(self.get_tm_data(tube_map.va_max), 2) }),
+                          ('min_ia', 'Min Ia', { 'dflt':0 }),
+                          ('max_ia', 'Max Ia', { 'dflt':round(self.get_tm_data(tube_map.ia_max), 2) })),
+            format = (('min_vg', 'max_vg'),
+                      ('min_va', 'max_va'),
+                      ('min_ia', 'max_ia'),))
+
     def deriv(self) :
-        try :
-            f = self.deriv_frame
-        except AttributeError :
-            self.deriv_frame = Frame(self.plot_params_frame, bg=COL_BG, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
-            self.deriv_data = data_element(
-                parent = self.deriv_frame,
-                attributes = (('min_ia', 'Min Ia', { 'dflt':0 }),
-                              ('max_ia', 'Max Ia', { 'dflt':round(self.tube_map.ia_max()/2, 2) }),
-                              ('va', '*Fixed Va', { 'dflt':0 }),
-                              ('vg', '*Fixed Vg', { 'dflt':0 }),
-                              ('eb', '*Fixed Eb', { 'dflt':0 }),
-                              ('rl', 'Rl (KΩ)', { 'dflt':0 }),
-                              ('show_va_vg', '?Show Va & Vg')),
-                format = (('min_ia', 'max_ia'), ('va',), ('vg',), ('eb', 'rl'), ('show_va_vg',)))
         self.deriv_frame.pack(side=TOP, anchor=W, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
         self.plot_params = self.deriv_frame
         self.deriv_data.display()
         self.plot_fn = self.plot_deriv
+
+    def make_deriv_data(self) :
+        self.deriv_data = data_element(
+            parent = self.deriv_frame,
+            attributes = (('min_ia', 'Min Ia', { 'dflt':0 }),
+                          ('max_ia', 'Max Ia', { 'dflt':round(self.get_tm_data(tube_map.ia_max)/2, 2) }),
+                          ('va', '*Fixed Va', { 'dflt':0 }),
+                          ('vg', '*Fixed Vg', { 'dflt':0 }),
+                          ('eb', '*Fixed Eb', { 'dflt':0 }),
+                          ('rl', 'Rl (KΩ)', { 'dflt':0 }),
+                          ('show_va_vg', '?Show Va & Vg')),
+            format = (('min_ia', 'max_ia'), ('va',), ('vg',), ('eb', 'rl'), ('show_va_vg',)))
+
+    def get_tm_data(self, fn) :
+        if self.tube_map :
+            return fn(self.tube_map)
+        else :
+            return 0
 
     def op_change(self, *args) :
         if self.plot_params :
@@ -137,7 +142,9 @@ class main_panel(Frame) :
     def data_change(self, *args) :
         utd = utracer_data(DATA_DIRECTORY + self.data_source.get())
         self.tube_map = tube_map(utd)
-        self.data_epoch += 1
+        self.make_plate_data()
+        self.make_grid_data()
+        self.make_deriv_data()
 
     def show_graph(self, graph) :
         try :
