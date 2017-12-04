@@ -10,6 +10,7 @@ from collections import OrderedDict
 from globals import *
 from utility import *
 from range import range
+import os
 
 COL_BG = 'ivory'
 COL_SELECT = 'red'
@@ -59,6 +60,7 @@ class main_panel(Frame) :
         self.make_deriv_data()
         self.plot_fn = None
         self.plot_params = None
+        self.title = ''
 
     def make_button(self, label, command) :
         Button(self.buttons, text=label, command=command, \
@@ -145,6 +147,7 @@ class main_panel(Frame) :
         self.make_plate_data()
         self.make_grid_data()
         self.make_deriv_data()
+        self.title = os.path.basename(self.data_source.get()).split('.')[0].upper()
 
     def show_graph(self, graph) :
         try :
@@ -171,7 +174,7 @@ class main_panel(Frame) :
             labels.append("Vg = %.1f" % (vg,))
         graph = single_axis_graph(x_values=x_values, y_values=curves, labels=labels, x_label="Va",
                                   y_label="Ia (mA)", y_axis=y_axis,
-                                  title=self.data_source.get(), subtitle=u"Plate Curves")
+                                  title=self.title, subtitle=u"Plate Curves")
         graph.finish()
         self.show_graph(graph)
 
@@ -190,7 +193,7 @@ class main_panel(Frame) :
             labels.append("Va = %.0f" % (va,))
         graph = single_axis_graph(x_values=x_values, y_values=curves, labels=labels, x_label="Vg",
                                   y_label="Ia (mA)", y_axis=y_axis,
-                                  title=self.data_source.get(), subtitle=u"Grid Curves")
+                                  title=self.title, subtitle=u"Grid Curves")
 
     def plot_deriv(self) :
         eb = va = vg = rl = 0
@@ -211,7 +214,7 @@ class main_panel(Frame) :
         if d['show_va_vg'] :
             labels += ["Va", "Vg"]
         graph = multi_axis_graph(x_values=derivs[0], y_values=derivs[1:len(labels) + 1],
-                                 labels=labels, x_label="Ia (ma)", title=self.data_source.get(),
+                                 labels=labels, x_label="Ia (ma)", title=self.title,
                                  subtitle=u"Gm, Rp and µ", note=note)
         graph.finish()
         self.show_graph(graph)
