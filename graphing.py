@@ -130,7 +130,7 @@ class multi_axis_graph(graph_base) :
             p = self.add_plot(sp, self.x_values, y, l, color=c)
             ymin = round(min(min(y), 0), 1, round_up=False)
             ymax = 0 if max(y)<=0 else round(max(y), 1)
-            sp.set_ylim(ymin, round(max(y), 1))
+            sp.set_ylim(ymin, ymax)
             sp.set_ylabel(l, color=c)
             sp.tick_params('y', colors=c)
             self.add_legend_item(l, c)

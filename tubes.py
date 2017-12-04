@@ -121,7 +121,7 @@ class main_panel(Frame) :
                               ('va', '*Fixed Va', { 'dflt':0 }),
                               ('vg', '*Fixed Vg', { 'dflt':0 }),
                               ('eb', '*Fixed Eb', { 'dflt':0 }),
-                              ('rl', 'Rl', { 'dflt':0 }),
+                              ('rl', 'Rl (KΩ)', { 'dflt':0 }),
                               ('show_va_vg', '?Show Va & Vg')),
                 format = (('min_ia', 'max_ia'), ('va',), ('vg',), ('eb', 'rl'), ('show_va_vg',)))
         self.deriv_frame.pack(side=TOP, anchor=W, padx=GLOBAL_PADX, pady=GLOBAL_PADY)
