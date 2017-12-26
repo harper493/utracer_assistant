@@ -40,7 +40,7 @@ class data_element(object) :
 
     def _make_attribute(self, params) :
         try :
-            t = params[2]['type']
+            t = params[2]['datatype']
         except (KeyError, IndexError) :
             t = 'float'
         if params[1][0]=='?' :
@@ -48,7 +48,9 @@ class data_element(object) :
         elif t=='float' :
             return data_attribute_float(params) 
         elif t=='choice' :
-            return data_attribute_choice(params) 
+            return data_attribute_choice(params)
+        elif t=='str' :
+            return data_attribute(params)
         else :
             raise NameError, "unknown data attribute type '%s'" % t
 
@@ -129,10 +131,13 @@ class data_element(object) :
                         attr.label = Checkbutton(self.parent, text=attr.descr[1:], bg=BGCOL_BG,
                                                  anchor=W, variable=var)
                         attr.label.var = var
+                    elif attr.descr=='!' :
+                        attr.label = Button(self.parent, text=attr.descr[1:], command=attr.command, bg=BGCOL_BG,
+                                            anchor=W)
                     else :
                         attr.label = Label(self.parent, text=attr.descr, bg=BGCOL_BG)
                     attr.label.grid(row=row, column=col, padx=GLOBAL_LABEL_PADX, pady=GLOBAL_PADY, sticky=W)
-                    if attr.descr[0]!='?' :
+                    if attr.descr[0]!='?' and attr.descr[0]!='!' :
                         attr.make_widget(self.parent). \
                             grid(row=row, column=col+1, padx=GLOBAL_LABEL_PADX, pady=GLOBAL_PADY, sticky=W)
                     col += 2
@@ -174,7 +179,8 @@ class data_attribute(object) :
 
     def __init__(self, params) :
         self.name, self.descr = params[0], params[1]
-        self.datatype, self.dflt, self.range, self.validator, self.choices = float, None, None, None, None
+        self.type, self.dflt, self.range, self.validator, self.choices, self.command = \
+            str, None, None, None, None, None
         self.readonly = False
         self.width = GLOBAL_ENTRY_WIDTH
         if len(params)>=3 :
@@ -193,6 +199,8 @@ class data_attribute(object) :
                     self.width = pval
                 elif pname=='choices' :
                     self.choices = pval
+                elif pname=='command' :
+                    self.command = pval
         self.value = self.dflt
         self.updated = False
         self.widget = None
@@ -222,6 +230,9 @@ class data_attribute(object) :
         self.update(None, None, None)
         return self.widget
 
+    def make_my_widget(self, parent) :
+        self.widget = Entry(parent, textvariable=self.var, width=self.width)
+
     def set_value(self, value) :
         if value :
             if self.validate(value) :
@@ -235,6 +246,12 @@ class data_attribute(object) :
         if self.var :
             self.set_value(self.var.get())
         return self.value
+
+    def get_widget_value(self) :
+        if self.widget :
+            return self.widget.get()
+        else :
+            return None
 
     def make_value(self, value) :
         try :
@@ -263,19 +280,11 @@ class data_attribute_scalar(data_attribute) :
     def __init__(self, params) :
         data_attribute.__init__(self, params)
 
-    def make_my_widget(self, parent) :
-        self.widget = Entry(parent, textvariable=self.var, width=self.width)
-
-    def get_widget_value(self) :
-        if self.widget :
-            return self.widget.get()
-        else :
-            return None
-
 class data_attribute_check(data_attribute) :
 
     def __init__(self, params) :
         data_attribute.__init__(self, params)
+        self.type = bool
 
     def make_my_widget(self, parent) :
         self.widget = None
@@ -289,7 +298,7 @@ class data_attribute_check(data_attribute) :
 class data_attribute_float(data_attribute_scalar) :
 
     def __init__(self, params) :
-        self.datatype = float
+        self.type = float
         data_attribute_scalar.__init__(self, params)
 
     def make_value(self, value) :
@@ -301,7 +310,6 @@ class data_attribute_float(data_attribute_scalar) :
 class data_attribute_choice(data_attribute) :
 
     def __init__(self, params) :
-        self.datatype = str
         data_attribute_scalar.__init__(self, params)
 
     def make_value(self, value) :

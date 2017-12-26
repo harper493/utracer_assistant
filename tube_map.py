@@ -13,11 +13,12 @@ class tube_map:
     DERIV_POINTS = 20        # number of points to calculate for derivatives
     DERIV_DELTA = 0.005       # delta multiplier for differential calculation
 
-    def __init__(self, udata):
+    def __init__(self, udata, title):
         self.va, self.vg, self.data = udata.get()
         self.original_va, self.original_vg = copy(self.va), copy(self.vg)
         self._ia_min, self._ia_max = flatten_min(self.data), flatten_max(self.data)
         self.udata = udata
+        self.title = title
         if False :
             print self.va
             print self.vg
